@@ -1,101 +1,214 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row justify-between items-center p-4 bg-white shadow-md">
+        {/* Logo */}
+        <div className="flex items-center">
+          <img
+            src="https://demo.awaikenthemes.com/landing/wp-content/uploads/2024/10/infine-banner-1024x576.png" // Replace with your logo path
+            alt="Logo"
+            width={134}
+            height={51}
+            className="w-32 h-auto"
+          />
+        </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        {/* Navigation Menu */}
+        <nav className="mt-4 md:mt-0">
+          <ul className="flex space-x-6">
+            <li>
+              <a href="#demo" className="text-gray-700 hover:text-blue-500">
+                Demos
+              </a>
+            </li>
+            <li>
+              <a href="#features" className="text-gray-700 hover:text-blue-500">
+                Features
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://docs.awaikenthemes.com/infine"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-blue-500"
+              >
+                Documentation
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://themeforest.net/user/awaiken#contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-blue-500"
+              >
+                Support
+              </a>
+            </li>
+            <li className="md:hidden">
+              <a
+                href="https://1.envato.market/infine-wp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-blue-500"
+              >
+                Purchase Now
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Purchase Button (Visible on Desktop) */}
+        <div className="hidden md:block">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://1.envato.market/infine-wp"
             target="_blank"
             rel="noopener noreferrer"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Purchase Now
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 py-12">
+        <div className="container mx-auto px-4">
+          {/* Hero Content */}
+          <div className="text-center">
+            <div className="flex justify-center space-x-4 mb-6">
+              <div className="flex items-center space-x-2">
+                <svg
+                  className="w-6 h-6 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                </svg>
+                <span className="text-gray-700">03 Hero Variations</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <svg
+                  className="w-6 h-6 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                </svg>
+                <span className="text-gray-700">15+ Inner Pages</span>
+              </div>
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Life and Business Coach WordPress Theme
+            </h1>
+
+            <div className="flex justify-center space-x-4">
+              <a
+                href="#demo"
+                className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600"
+              >
+                Explore Demos
+              </a>
+              <a
+                href="https://1.envato.market/infine-wp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-purple-500 text-white px-6 py-3 rounded-md hover:bg-purple-600"
+              >
+                Purchase Now
+              </a>
+            </div>
+          </div>
+
+          {/* Banner Image */}
+          <div className="mt-12">
+            <img
+              src="https://demo.awaikenthemes.com/landing/wp-content/uploads/2024/10/infine-banner-1024x576.png" // Replace with your banner image path
+              alt="Banner"
+              width={800}
+              height={450}
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="bg-white py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+            Why Choose Infine Theme
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+              <div className="text-center">
+                <svg
+                  className="w-12 h-12 text-blue-500 mx-auto"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                </svg>
+                <h3 className="text-xl font-semibold mt-4">Elementor Builder</h3>
+                <p className="text-gray-600 mt-2">
+                  The drag-and-drop page builder for creating beautiful websites easily.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+              <div className="text-center">
+                <svg
+                  className="w-12 h-12 text-blue-500 mx-auto"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                </svg>
+                <h3 className="text-xl font-semibold mt-4">Contact Form 7</h3>
+                <p className="text-gray-600 mt-2">
+                  A simple and flexible contact form plugin for WordPress.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+              <div className="text-center">
+                <svg
+                  className="w-12 h-12 text-blue-500 mx-auto"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                </svg>
+                <h3 className="text-xl font-semibold mt-4">Theme Typography</h3>
+                <p className="text-gray-600 mt-2">
+                  The creative use of fonts to convey emotions and enhance design.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Section */}
+      <div className="bg-gray-900 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm">
+            Copyright © Infine All Rights Reserved. Powered by Awaiken
+          </p>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default HomePage;
